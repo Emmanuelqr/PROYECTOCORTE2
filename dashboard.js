@@ -1,3 +1,6 @@
+import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import { auth } from "./firebase-config.js";
+
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
 updateCartCount();
 
