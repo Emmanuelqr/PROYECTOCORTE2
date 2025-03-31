@@ -60,13 +60,15 @@ function animateProduct(imgSrc, startX, startY) {
     setTimeout(() => document.body.removeChild(flyingImg), 700);
 }
 
-document.getElementById('logoutBtn').addEventListener('click', () => {
-    signOut(auth).then(() => {
-        localStorage.removeItem('cart');
-        window.location.href = "index.html";
-    }).catch((error) => {
-        alert("Error al cerrar sesión: " + error.message);
+const logoutBtn = document.getElementById('logoutBtn');
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+        signOut(auth).then(() => {
+            localStorage.removeItem('cart'); // Limpia el carrito
+            window.location.href = "index.html"; // Redirige al login
+        }).catch((error) => {
+            alert("Error al cerrar sesión: " + error.message);
+        });
     });
-});
-
+}
 
