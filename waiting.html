@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esperando Verificación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Por favor, verifica tu correo electrónico</h2>
+        <p>Hemos enviado un correo de verificación a tu bandeja de entrada. Si no lo encuentras, puedes reenviarlo.</p>
+
+
+        <button id="resendVerificationBtn">Reenviar correo de verificación</button>
+        <p id="verificationMessage"></p>
+
+        <p>¿Ya verificaste tu correo? Si es así, puedes <a href="index.html">iniciar sesión</a>.</p>
+    </div>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="waiting.js"></script>
+</body>
+</html>

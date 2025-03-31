@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.requirement {
+    list-style-type: none;
+    font-size: 14px;
+    margin: 5px 0;
+    color: #ccc;
+    text-align: left;
+}
+
+.requirement.valid {
+    color: green;
+    font-weight: bold;
+}
+
+.requirement.invalid {
+    color: red;
+}
+
+#password-requirements {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+input[type="password"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+input[type="password"]:invalid {
+    border-color: red;
+}
+
+input[type="password"]:valid {
+    border-color: green;
+}
+
+#reg-message {
+    font-size: 14px;
+    color: red;
+}
+
+.requirement span {
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.requirement.valid span {
+    color: green;
+}
+
+.requirement.invalid span {
+    color: red;
+}
+
+
+.google-btn {
+    background-color: transparent; 
+    color: #4285F4; 
+    border: 2px solid #4285F4; 
+    border-radius: 5px; 
+    padding: 10px; 
+    width: 100%; 
+    font-size: 16px; 
+    cursor: pointer; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    transition: all 0.3s ease; 
+}
+
+.google-btn:hover {
+    background-color: #4285F4; 
+    color: white; 
+    border-color: #357AE8; 
+    transform: scale(1.05); 
+}
+
+
+.google-icon {
+    width: 30px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+
+

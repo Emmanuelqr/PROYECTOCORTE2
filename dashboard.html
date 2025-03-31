@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Servicios de Streaming</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <h1>Servicios de Streaming</h1>
+        <div class="cart-container">
+            <a href="carrito.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+            <button id="logoutBtn">Cerrar sesión</button>
+        </div>
+    </div>
+</nav>
+
+
+<section class="product-filter">
+    <h2>Filtrar Servicios</h2>
+    <input type="text" id="searchInput" placeholder="Buscar servicios...">
+    <select id="categorySelect">
+        <option value="all">Categoría: Todos</option>
+        <option value="netflix">Netflix</option>
+        <option value="crunchyroll">Crunchyroll</option>
+        <option value="spotify">Spotify</option>
+        <option value="disneyplus">Disney+</option>
+        <option value="hbo">HBO Max</option>
+        <option value="paramount">Paramount+</option>
+        <option value="vix">Vix Premium</option>
+        <option value="amazon">Amazon Prime</option>
+        <option value="youtube">Youtube Premium</option>
+    </select>
+</section>
+
+<section class="products">
+
+    <div class="product-card" data-id="1" data-price="10.99">
+        <img src="netflix.png" alt="Netflix" class="product-img">
+        <h3 class="product-title">Netflix</h3>
+        <p class="product-description">Acceso ilimitado a películas y series.</p>
+        <p class="product-price">$10.99/mes</p>
+        <button class="add-to-cart-btn">Añadir al carrito</button>
+    </div>
+
+    <div class="product-card" data-id="2" data-price="7.99">
+        <img src="crunchy.png" alt="Crunchyroll" class="product-img">
+        <h3 class="product-title">Crunchyroll</h3>
+        <p class="product-description">Anime, manga y dramas asiáticos.</p>
+        <p class="product-price">$7.99/mes</p>
+        <button class="add-to-cart-btn">Añadir al carrito</button>
+    </div>
+
+    <div class="product-card" data-id="3" data-price="9.99">
+        <img src="spotify.png" alt="Spotify" class="product-img">
+        <h3 class="product-title">Spotify</h3>
+        <p class="product-description">Acceso a música ilimitada.</p>
+        <p class="product-price">$9.99/mes</p>
+        <button class="add-to-cart-btn">Añadir al carrito</button>
+    </div>
+
+    <div class="product-card" data-id="4" data-price="6.99">
+        <img src="disney+.png" alt="Disney+" class="product-img">
+        <h3 class="product-title">Disney+</h3>
+        <p class="product-description">Películas y series de Disney, Pixar, Marvel, Star Wars, y National Geographic.</p>
+        <p class="product-price">$6.99/mes</p>
+        <button class="add-to-cart-btn">Añadir al carrito</button>
+    </div>
+
+    <div class="product-card" data-id="5" data-price="14.99">
+        <img src="max.png" alt="HBO Max" class="product-img">
+        <h3 class="product-title">HBO Max</h3>
+        <p class="product-description">Películas y series de HBO y WarnerMedia.</p>
+        <p class="product-price">$14.99/mes</p>
+        <button class="add-to-cart-btn">Añadir al carrito</button>
+    </div>
+
+    <div class="product-card" data-id="6" data-price="14.99">
+        <img src="paramount.png" alt="Paramount+" class="product-img">
+        <h3 class="product-title">Paramount+</h3>
+        <p class="product-description">Películas, series y más. Plan Premium.</p>
+        <p class="product-price">$14.99/mes</p>
+        <button class="add-to-cart-btn">Añadir al carrito</button>
+    </div>
+
+    <div class="product-card" data-id="7" data-price="14.99">
+        <img src="vix.jpg" alt="Vix Premium" class="product-img">
+        <h3 class="product-title">Vix Premium</h3>
+        <p class="product-description">Todo el contenido y canales desbloqueados.</p>
+        <p class="product-price">$14.99/mes</p>
+        <button class="add-to-cart-btn">Añadir al carrito</button>
+    </div>
+
+    <div class="product-card" data-id="8" data-price="14.99">
+        <img src="amazon.png" alt="Amazon Prime" class="product-img">
+        <h3 class="product-title">Amazon Prime</h3>
+        <p class="product-description">Contenido, eventos y canales extra.</p>
+        <p class="product-price">$14.99/mes</p>
+        <button class="add-to-cart-btn">Añadir al carrito</button>
+    </div>
+
+    <div class="product-card" data-id="9" data-price="14.99">
+        <img src="youtube.png" alt="Youtube Premium" class="product-img">
+        <h3 class="product-title">Youtube Premium</h3>
+        <p class="product-description">0 Anuncios en YT, Music y Descargas Offline.</p>
+        <p class="product-price">$14.99/mes</p>
+        <button class="add-to-cart-btn">Añadir al carrito</button>
+    </div>
+
+</section>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

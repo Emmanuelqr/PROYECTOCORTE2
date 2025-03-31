@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Método de Pago</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .payment-container { max-width: 700px; margin: auto; padding: 20px; }
+        .payment-method { border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; display:flex; align-items:center;justify-content:space-between; }
+        .payment-method:hover { border-color: #aaa; }
+        .order-summary { background-color: #f9f9f9; border-radius: 8px; padding: 15px; margin-bottom:20px; }
+        .badge { background-color: #dfffe2; color: #37b24d; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+        .discount-badge { background-color: #ff4081; color: white; border-radius: 15px; padding: 3px 10px; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <h1>Método de Pago</h1>
+        <button onclick="window.location.href='resumen.html'">Volver al Resumen</button>
+    </div>
+</nav>
+
+<div class="payment-container">
+
+    <div class="order-summary">
+        <h2>Tu Orden <span id="total-items">0 productos</span></h2>
+        <p>Subtotal: <span id="subtotal">$0.00</span></p>
+        <p>Comisión: <span>$0.00</span></p>
+        <hr>
+        <h3>Total: <span id="total-order">$0.00</span></h3>
+    </div>
+
+    <h3>Método de Pago</h3>
+    <p>Selecciona tu método de pago preferido</p>
+
+    <div class="payment-method">
+        <div>
+            <strong>Tarjeta vía PayPal</strong> <span class="badge">Hasta 6 MSI</span>
+            <p>Paga de forma segura con tu tarjeta</p>
+        </div>
+        <div><i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i></div>
+    </div>
+
+    <div class="payment-method">
+        <div>
+            <strong>PayPal</strong> <span class="badge">Hasta 6 MSI</span>
+            <p>Paga de forma segura con tu cuenta PayPal</p>
+        </div>
+        <img src="paypal.png" width="50">
+    </div>
+
+    <div class="payment-method">
+        <div>
+            <strong>Aplazo</strong> <span class="badge">Hasta 24 quincenas</span> <span class="discount-badge">10% OFF</span>
+            <p>Paga a plazos sin tarjeta de crédito</p>
+            <small style="color:#ff4081">Primera compra: usa el código ESTRENA10</small>
+        </div>
+        <img src="aplazo.png" width="80">
+    </div>
+
+    <div class="payment-method">
+        <div>
+            <strong>Tarjeta vía Conekta</strong> <span class="badge">Hasta 12 MSI</span>
+            <p>Paga de forma segura con tu tarjeta</p>
+        </div>
+        <img src="conekta.png" width="80">
+    </div>
+
+    <div class="payment-method">
+        <div>
+            <strong>Transferencia bancaria</strong> <span class="badge">Sin comisiones</span>
+            <p>Paga mediante transferencia SPEI</p>
+        </div>
+        <img src="spei.svg" width="50">
+    </div>
+
+    <div class="payment-method">
+        <div>
+            <strong>Pago en OXXO</strong> <span class="badge">Pago en efectivo</span>
+            <p>Paga en efectivo en cualquier OXXO</p>
+        </div>
+        <img src="oxxo.png" width="70">
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+        document.getElementById('total-items').textContent = `${cart.length} productos`;
+        document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        document.getElementById('total-order').textContent = `$${subtotal.toFixed(2)}`;
+    });
+</script>
+
+</body>
+</html>

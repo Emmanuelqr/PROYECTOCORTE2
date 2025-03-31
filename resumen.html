@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resumen del Pedido</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <h1>Resumen del Pedido</h1>
+        <button onclick="window.location.href='carrito.html'">Volver al Carrito</button>
+    </div>
+</nav>
+
+<section class="cart-wrapper">
+
+    <h2>Resumen del Pedido</h2>
+
+    <div id="resumen-container"></div>
+
+    <div class="promo-section">
+        <input type="text" id="promo-code" placeholder="Ingresa el código promocional">
+        <button id="apply-promo">Aplicar</button>
+    </div>
+
+    <div class="resumen-totals">
+        <p>Subtotal: <span id="subtotal">$0.00</span></p>
+        <p>Envío: <span id="envio">Digital</span></p>
+        <p>Comisión: <span id="comision">$0.00</span></p>
+        <hr>
+        <h3>Total: <span id="total">$0.00</span></h3>
+    </div>
+
+    <button class="checkout-btn" onclick="window.location.href='pago.html'">Continuar al Pago</button>
+
+</section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+	    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+	    let resumenHTML = '';
+	    let subtotal = 0;
+
+	    cart.forEach(item => {
+	        resumenHTML += `
+	            <div class="cart-item">
+	                <img src="${item.img}">
+	                <div>
+	                    <h4>${item.title}</h4>
+	                    <p>Cantidad: ${item.quantity}</p>
+	                </div>
+	                <div>
+	                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+	                </div>
+	            </div>
+	        `;
+	        subtotal += item.price * item.quantity;
+	    });
+
+	    document.getElementById('resumen-container').innerHTML = resumenHTML;
+	    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+	    document.getElementById('total').textContent = `$${subtotal.toFixed(2)}`;
+	});
+</script>
+
+</body>
+</html>
